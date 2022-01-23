@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SwitchChallenge</string>
+    <string name="welcome">Welcome to SwitchChallege</string>
+    <string name="welcome_submsg">We are deligted to see you again !</string>
 </resources>
