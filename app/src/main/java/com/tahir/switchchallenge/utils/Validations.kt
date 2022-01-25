@@ -24,7 +24,6 @@ object Validations {
     }
 
     fun validateCardExpiryDate(expiryDate: String): Boolean {
-        //val input = "11/12" // for example
 
         val simpleDateFormat = SimpleDateFormat("MM/yy")
         simpleDateFormat.setLenient(false)

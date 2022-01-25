@@ -77,6 +77,7 @@
                         android:orientation="vertical">
 
                         <com.google.android.material.textfield.TextInputLayout
+                           android:id="@+id/cc_input"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
@@ -88,12 +89,13 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@null"
-
+                                android:maxEms="16"
+                                android:id="@+id/cc"
                                 android:drawableEnd="@drawable/ic_baseline_credit_card_24"
                                 android:drawablePadding="@dimen/_5sdp"
                                 android:fontFamily="@font/opensansbold"
                                 android:hint="Card Number"
-                                android:inputType="text"
+                                android:inputType="number"
                                 android:maxLines="1"
                                 android:textColor="@android:color/black"
                                 android:textSize="16sp" />
@@ -113,7 +115,6 @@
                                 android:layout_height="match_parent"
                                 android:drawableEnd="@drawable/ic_baseline_name_format_24"
                                 android:drawablePadding="@dimen/_5sdp"
-
                                 android:fontFamily="@font/opensansbold"
                                 android:hint="Name on card"
                                 android:inputType="text"
@@ -178,9 +179,9 @@
                                     android:drawablePadding="16dp"
                                     android:fontFamily="@font/opensansbold"
 
-                                    android:hint="Cvv"
-
-                                    android:inputType="date"
+                                    android:hint="CVV"
+android:maxEms="3"
+                                    android:inputType="numberPassword"
                                     android:maxLines="1"
                                     android:textColor="@android:color/black"
                                     android:textSize="16sp" />
