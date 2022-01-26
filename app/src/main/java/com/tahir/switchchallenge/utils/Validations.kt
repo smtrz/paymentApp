@@ -6,7 +6,7 @@ import kotlin.collections.ArrayList
 
 object Validations {
     fun validateCardNumber(ccNumber: String): Boolean {
-        var isTrue: Boolean = false
+        var isTrue = false
         var ptVisa = "^4[0-9]{6,}$"
         var ptMasterCard = "^5[1-5][0-9]{5,}$"
         val listOfPattern = ArrayList<String>()
@@ -24,11 +24,19 @@ object Validations {
     }
 
     fun validateCardExpiryDate(expiryDate: String): Boolean {
+        var isTrue: Boolean;
+        try {
+            val simpleDateFormat = SimpleDateFormat("MM/yy")
+            simpleDateFormat.setLenient(false)
+            val expiry: Date = simpleDateFormat.parse(expiryDate)
+            isTrue = expiry.before(Date())
+        } catch (e: Exception) {
+            isTrue = false;
 
-        val simpleDateFormat = SimpleDateFormat("MM/yy")
-        simpleDateFormat.setLenient(false)
-        val expiry: Date = simpleDateFormat.parse(expiryDate)
-        return expiry.before(Date())
+        }
+        return isTrue
+
 
     }
+
 }

@@ -7,11 +7,19 @@
     tools:context=".activities.MainActivity">
 
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="-16dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+
+            android:visibility="gone" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -40,7 +48,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/opensansitalic"
-                        android:text="Hey Shanky!"
+                        android:text="Pay now in seconds !"
                         android:textAlignment="center"
                         android:textColor="#fff"
                         android:textSize="32sp" />
@@ -52,7 +60,7 @@
                         android:layout_below="@+id/textView"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/opensansitalic"
-                        android:text="Where you want to go."
+                        android:text="you will be paying 500 USD for a macbook pro :)"
                         android:textAlignment="center"
                         android:textColor="#fff"
                         android:textSize="18sp" />
@@ -77,7 +85,7 @@
                         android:orientation="vertical">
 
                         <com.google.android.material.textfield.TextInputLayout
-                           android:id="@+id/cc_input"
+                            android:id="@+id/cc_input"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
@@ -86,16 +94,16 @@
                             >
 
                             <EditText
+                                android:id="@+id/cc"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@null"
-                                android:maxEms="16"
-                                android:id="@+id/cc"
                                 android:drawableEnd="@drawable/ic_baseline_credit_card_24"
                                 android:drawablePadding="@dimen/_5sdp"
                                 android:fontFamily="@font/opensansbold"
                                 android:hint="Card Number"
                                 android:inputType="number"
+                                android:maxLength="16"
                                 android:maxLines="1"
                                 android:textColor="@android:color/black"
                                 android:textSize="16sp" />
@@ -111,6 +119,7 @@
                             >
 
                             <EditText
+                                android:id="@+id/card_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:drawableEnd="@drawable/ic_baseline_name_format_24"
@@ -143,14 +152,15 @@
                                 >
 
                                 <EditText
+                                    android:id="@+id/expiry"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:drawableEnd="@drawable/ic_baseline_calendar_today_24"
                                     android:drawablePadding="@dimen/_5sdp"
                                     android:fontFamily="@font/opensansbold"
-                                    android:hint="Expiry"
 
-                                    android:inputType="date"
+                                    android:hint="Expiry"
+                                    android:inputType="text"
                                     android:maxLines="1"
                                     android:textColor="@android:color/black"
                                     android:textSize="16sp" />
@@ -171,17 +181,18 @@
                                 app:boxBackgroundColor="@android:color/transparent">
 
                                 <EditText
+                                    android:id="@+id/cvv"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_gravity="end"
                                     android:layout_weight="0.2"
                                     android:drawableEnd="@drawable/ic_baseline_confirmation_number_24"
                                     android:drawablePadding="16dp"
-                                    android:fontFamily="@font/opensansbold"
 
+                                    android:fontFamily="@font/opensansbold"
                                     android:hint="CVV"
-android:maxEms="3"
                                     android:inputType="numberPassword"
+                                    android:maxLength="3"
                                     android:maxLines="1"
                                     android:textColor="@android:color/black"
                                     android:textSize="16sp" />
@@ -194,7 +205,7 @@ android:maxEms="3"
 
 
                 <Button
-                    android:id="@+id/search_buses"
+                    android:id="@+id/pay_now"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
