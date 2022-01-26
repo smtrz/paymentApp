@@ -48,7 +48,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/opensansitalic"
-                        android:text="PENDING"
+                        android:text="Partial"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -83,7 +83,7 @@
                     android:fontFamily="@font/opensans"
                     android:gravity="start"
                     android:padding="@dimen/_5sdp"
-                    android:text="Macbook Pro"
+                    android:text="Payment No : 1"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp"
                     android:textStyle="normal" />
@@ -108,18 +108,7 @@
                     android:layout_marginRight="@dimen/_15sdp"
                     android:layout_marginBottom="@dimen/_10sdp"
                     android:gravity="right"
-                    android:orientation="horizontal">
-
-
-                    <Button
-                        android:id="@+id/refund"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/background"
-                        android:text="Request refund"></Button>
-
-
-                </LinearLayout>
+                    android:orientation="horizontal"/>
 
             </LinearLayout>
 

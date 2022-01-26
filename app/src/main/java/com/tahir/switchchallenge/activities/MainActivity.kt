@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     fun init() {
         payment.setOnClickListener(this)
+        paymenthistory.setOnClickListener(this)
+        refund.setOnClickListener(this)
 
     }
 
@@ -26,7 +28,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(i)
 
             }
+            R.id.paymenthistory -> {
+                var i = Intent(this, Payments::class.java)
+                startActivity(i)
 
+            }
+            R.id.refund -> {
+                var i = Intent(this, RefundList::class.java)
+                startActivity(i)
+
+            }
         }
 
 

@@ -20,6 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.PayNow"></activity>
+        <activity android:name=".activities.Payments"></activity>
+        <activity android:name=".activities.RefundRequest"></activity>
+        <activity android:name=".activities.RefundList"></activity>
     </application>
 
 </manifest>

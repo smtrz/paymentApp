@@ -144,7 +144,7 @@ class PayNow : AppCompatActivity(), View.OnClickListener {
         // call database insertion functions from here.
         payNowViewModel.submitPayment(
             Payments(
-                amount = GeneralHelpers.generateRadomAmount(),
+                amount = GeneralHelpers.generateRadomAmount().toDouble(),
                 purpose = "Bought MacBook Pro",
                 currency = "USD",
                 paymentDateTime = GeneralHelpers.getCurrentDateTime()

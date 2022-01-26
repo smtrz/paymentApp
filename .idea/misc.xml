@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/tahir/AndroidStudioProjects/SwitchChallenge/app/src/main/res/drawable/ic_no_data.xml" value="0.1475" />
         <entry key="..\:/Users/tahir/AndroidStudioProjects/SwitchChallenge/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/tahir/AndroidStudioProjects/SwitchChallenge/app/src/main/res/layout/payment_list.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/tahir/AndroidStudioProjects/SwitchChallenge/app/src/main/res/layout/payment_row_item.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/tahir/AndroidStudioProjects/SwitchChallenge/app/src/main/res/layout/paynow.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/tahir/AndroidStudioProjects/SwitchChallenge/app/src/main/res/layout/refund.xml" value="0.21145833333333333" />
+        <entry key="..\:/Users/tahir/AndroidStudioProjects/SwitchChallenge/app/src/main/res/layout/refund_list.xml" value="0.1640625" />
+        <entry key="..\:/Users/tahir/AndroidStudioProjects/SwitchChallenge/app/src/main/res/layout/refund_row_item.xml" value="0.2" />
       </map>
     </option>
   </component>

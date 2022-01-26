@@ -41,7 +41,7 @@
                         android:src="@drawable/card_land" />
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/heading"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -54,13 +54,13 @@
                         android:textSize="32sp" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/subheading"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/textView"
+                        android:layout_below="@+id/heading"
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/opensansitalic"
-                        android:text="you will be paying 500 USD for a macbook pro :)"
+                        android:text="you will be paying the amount to buy a macbook pro :)"
                         android:textAlignment="center"
                         android:textColor="#fff"
                         android:textSize="18sp" />
@@ -83,6 +83,31 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="16dp"
                         android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/amount_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:background="@android:color/transparent"
+                            app:boxBackgroundColor="@android:color/transparent">
+                            >
+
+                            <EditText
+                                android:id="@+id/amount"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@null"
+                                android:drawableEnd="@drawable/ic_baseline_money_24"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:fontFamily="@font/opensansbold"
+                                android:hint="Enter Amount"
+                                android:inputType="number"
+                                android:maxLength="16"
+                                android:maxLines="1"
+                                android:textColor="@android:color/black"
+                                android:textSize="16sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/cc_input"
