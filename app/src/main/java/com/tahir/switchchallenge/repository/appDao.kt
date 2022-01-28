@@ -26,7 +26,8 @@ interface appDao {
     @Query("SELECT SUM(amount)  from Refunds where paymentId=:paymentid")
     suspend fun getRefundSum(paymentid: Int): Double?
 
+    // getting all the active refunds.
     @Query("SELECT *  from Refunds where isActive=1")
-     fun getAllRefunds(): LiveData<List<Refunds>>
+    fun getAllRefunds(): LiveData<List<Refunds>>
 
 }

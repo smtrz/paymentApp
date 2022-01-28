@@ -12,14 +12,11 @@ import kotlinx.android.parcel.Parcelize
 data class Payments(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-
     var amount: Double?,
     var purpose: String?,
     var currency: String?,
     @ColumnInfo(name = "status", defaultValue = "1") var status: String = "1",
-
     @ColumnInfo(name = "isActive", defaultValue = "1") var isActive: Boolean = true,
     var paymentDateTime: String? = null,
     @ColumnInfo(name = "refundRequested", defaultValue = "0") var refundRequested: Boolean = false,
-
-    ) : Parcelable
+) : Parcelable

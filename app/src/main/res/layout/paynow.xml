@@ -102,7 +102,7 @@
                                 android:drawablePadding="@dimen/_5sdp"
                                 android:fontFamily="@font/opensansbold"
                                 android:hint="Enter Amount"
-                                android:inputType="number"
+                                android:inputType="numberDecimal"
                                 android:maxLength="16"
                                 android:maxLines="1"
                                 android:textColor="@android:color/black"

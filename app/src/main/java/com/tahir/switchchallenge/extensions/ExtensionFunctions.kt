@@ -3,7 +3,9 @@ package com.tahir.switchchallenge.extensions
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
-
+/**
+ *  All the extension functions will reside here.
+ */
 object ExtensionFunctions {
 
     fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {

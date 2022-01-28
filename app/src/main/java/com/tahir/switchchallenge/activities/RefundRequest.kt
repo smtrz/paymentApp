@@ -1,9 +1,11 @@
 package com.tahir.switchchallenge.activities
 
 import android.os.Bundle
+import android.text.InputFilter
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.highbryds.washer.Helpers.UIHelper
+import com.tahir.switchchallenge.Helpers.DigitsInputFilter
 import com.tahir.switchchallenge.Helpers.GeneralHelpers
 import com.tahir.switchchallenge.R
 import com.tahir.switchchallenge.extensions.obtainViewModel
@@ -30,6 +32,7 @@ class RefundRequest : AppCompatActivity(), View.OnClickListener {
         amount_allowed = payment_data.amount!!
         payNowViewModel = obtainViewModel(PaymentViewModel::class.java)
         refund_now.setOnClickListener(this)
+        amount.setFilters(arrayOf<InputFilter>(DigitsInputFilter(8, 2)))
         getSumofRefunds()
     }
 
@@ -69,14 +72,18 @@ class RefundRequest : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
+        if (amount.text.isEmpty()) {
 
+            UIHelper.showShortToastInCenter(this, "Amount can't be left blank.")
+            return
+        }
         if (!amount.text.equals("")) {
             var refundType = ""
             if (amount.text.toString().toDouble() < payment_data.amount!!) {
-                refundType = "partial"
+                refundType = "Partial"
 
             } else if (amount.text.toString().toDouble() == payment_data.amount) {
-                refundType = "full"
+                refundType = "Full"
 
             }
             var refund = Refunds(

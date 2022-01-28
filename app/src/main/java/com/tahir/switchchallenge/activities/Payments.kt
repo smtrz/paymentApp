@@ -4,18 +4,21 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.tahir.switchchallenge.Helpers.GeneralHelpers
 import com.tahir.switchchallenge.R
 import com.tahir.switchchallenge.adapters.BaseRecyclerViewAdapter
 import com.tahir.switchchallenge.adapters.PaymentListAdapter
 import com.tahir.switchchallenge.extensions.obtainViewModel
-import com.tahir.switchchallenge.generics.DataState
 import com.tahir.switchchallenge.models.Payments
 import com.tahir.switchchallenge.viewmodels.PaymentViewModel
 import kotlinx.android.synthetic.main.payment_list.*
 
+/**
+ * [author] by `Tahir Raza`
+ * [created] on 25/01/2022
+ *
+ * Activity => Payments
+ */
 class Payments : AppCompatActivity(), BaseRecyclerViewAdapter.OnItemClickListener<Payments> {
     lateinit var payNowViewModel: PaymentViewModel
     lateinit var paymentAdapter: PaymentListAdapter
@@ -25,6 +28,9 @@ class Payments : AppCompatActivity(), BaseRecyclerViewAdapter.OnItemClickListene
         init()
     }
 
+    /*
+       the entry point function for initializations.
+        */
     fun init() {
         paymentAdapter = this?.let { PaymentListAdapter() }!!
         paymentAdapter.setOnItemClickListener(this)
@@ -34,6 +40,9 @@ class Payments : AppCompatActivity(), BaseRecyclerViewAdapter.OnItemClickListene
 
     }
 
+    /*
+       Setup payment list adapter.
+        */
     fun setupListAdapter(arrayList: List<Payments>) {
         val mLayoutManager = LinearLayoutManager(this)
         mLayoutManager.orientation = LinearLayoutManager.VERTICAL
@@ -44,6 +53,9 @@ class Payments : AppCompatActivity(), BaseRecyclerViewAdapter.OnItemClickListene
         noDataFound()
     }
 
+    /*
+      Subscribe to the events
+        */
     fun subscribe() {
 
         payNowViewModel.getAllPayments().observe(
@@ -57,6 +69,9 @@ class Payments : AppCompatActivity(), BaseRecyclerViewAdapter.OnItemClickListene
 
     }
 
+    /*
+       no data found for the list
+        */
     private fun noDataFound() {
         if (paymentAdapter.getList().isEmpty() || paymentAdapter.getList() == null) {
             imgNoDataFound.visibility = View.VISIBLE
@@ -68,10 +83,13 @@ class Payments : AppCompatActivity(), BaseRecyclerViewAdapter.OnItemClickListene
         }
     }
 
+    /*
+       onItemClick event - for click events of payments
+        */
     override fun onItemClick(listitem: Payments, position: Int, view: View?) {
         when (view?.id) {
             R.id.refund -> {
-// call refund request procedure.
+                // open refund request activity and pass the payment data.
                 val intent = Intent(this, RefundRequest::class.java)
                 intent.putExtra("payment_data", listitem)
                 startActivity(intent)

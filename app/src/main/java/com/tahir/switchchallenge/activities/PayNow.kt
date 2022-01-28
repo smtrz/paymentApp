@@ -1,9 +1,11 @@
 package com.tahir.switchchallenge.activities
 
 import android.os.Bundle
+import android.text.InputFilter
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.highbryds.washer.Helpers.UIHelper
+import com.tahir.switchchallenge.Helpers.DigitsInputFilter
 import com.tahir.switchchallenge.Helpers.GeneralHelpers
 import com.tahir.switchchallenge.R
 import com.tahir.switchchallenge.extensions.ExtensionFunctions.afterTextChanged
@@ -14,6 +16,13 @@ import com.tahir.switchchallenge.utils.Validations
 import com.tahir.switchchallenge.viewmodels.PaymentViewModel
 import kotlinx.android.synthetic.main.paynow.*
 
+
+/**
+ * [author] by `Tahir Raza`
+ * [created] on 25/01/2022
+ *
+ * Activity => PayNow
+ */
 class PayNow : AppCompatActivity(), View.OnClickListener {
     lateinit var payNowViewModel: PaymentViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +31,10 @@ class PayNow : AppCompatActivity(), View.OnClickListener {
         init()
     }
 
-    fun init() {
+    /*
+    function that initializes the views,setup Ontextchangelistener and obtain view model
+     */
+    private fun init() {
         payNowViewModel = obtainViewModel(PaymentViewModel::class.java)
         subscribe()
         pay_now.setOnClickListener(this)
@@ -83,12 +95,14 @@ class PayNow : AppCompatActivity(), View.OnClickListener {
                 expiry.setError(null)
 
             }
-
-
         }
+        amount.setFilters(arrayOf<InputFilter>(DigitsInputFilter(8, 2)))
+
     }
 
-
+    /*
+    Subscribe function that subscribes to the livedata event of payment submission.
+    */
     fun subscribe() {
         payNowViewModel.paymentObx.observe(this) { dataState ->
             when (dataState) {
@@ -97,6 +111,7 @@ class PayNow : AppCompatActivity(), View.OnClickListener {
                 is DataState.Success<Long?> -> {
 
                     dataState.data?.let { it1 ->
+                        // if the row is inserted successfully.
                         if (it1 > 0) {
 
                             UIHelper.showShortToastInCenter(
@@ -105,6 +120,7 @@ class PayNow : AppCompatActivity(), View.OnClickListener {
                             )
                             finish()
                         } else {
+                            // in case of error in insertion.
                             UIHelper.showShortToastInCenter(this, "Payment was not successful.")
 
 
@@ -129,13 +145,16 @@ class PayNow : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    /*
+    OnClick events : validating and then submit => submitpayment
+     */
     override fun onClick(view: View?) {
 
         if (cc.error != null || expiry.error != null || card_name.error != null || cvv.error != null) {
 
             return
         }
-        if (cc.text.length == 0 || expiry.text.length == 0 || card_name.text.length == 0 || cvv.text.length == 0) {
+        if (amount.text.isEmpty() || cc.text.isEmpty() || expiry.text.isEmpty() || card_name.text.isEmpty() || cvv.text.isEmpty()) {
 
             UIHelper.showShortToastInCenter(this, "please fill in the complete form.")
             return
@@ -144,7 +163,7 @@ class PayNow : AppCompatActivity(), View.OnClickListener {
         // call database insertion functions from here.
         payNowViewModel.submitPayment(
             Payments(
-                amount = GeneralHelpers.generateRadomAmount().toDouble(),
+                amount = amount.text.toString().toDouble(),
                 purpose = "Bought MacBook Pro",
                 currency = "USD",
                 paymentDateTime = GeneralHelpers.getCurrentDateTime()

@@ -9,6 +9,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 object DbRepo {
+    /**
+     *  Paynow , inserts the payment data into the database.
+     */
     suspend fun payNow(
         payment: Payments
     ): Flow<DataState<Long>> =
@@ -25,6 +28,9 @@ object DbRepo {
             }
         }
 
+    /**
+     *  get all the active payments from database.
+     */
     fun getPaymentsfromDb(): LiveData<List<Payments>> {
 
         return AppConfig.appDao.getAllActivePayments()
@@ -32,8 +38,9 @@ object DbRepo {
 
     }
 
-// get sum of refunds for a particular payment.
-
+    /**
+     *  get sum of refunds for a particular payment.
+     */
     suspend fun getRefundSum(
         refund: Refunds, payment: Payments
     ): Flow<DataState<Long>> =
@@ -68,6 +75,9 @@ object DbRepo {
             }
         }
 
+    /**
+     *  insert the refund into database.
+     */
     suspend fun refundNow(
         refunds: Refunds
     ): Flow<DataState<Long>> =
@@ -84,7 +94,9 @@ object DbRepo {
             }
         }
 
-
+    /**
+     *  getting all the refunds from database
+     */
     fun getallRefunds(): LiveData<List<Refunds>> {
 
         return AppConfig.appDao.getAllRefunds()

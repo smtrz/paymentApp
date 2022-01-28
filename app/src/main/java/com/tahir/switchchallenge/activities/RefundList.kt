@@ -13,6 +13,12 @@ import kotlinx.android.synthetic.main.payment_list.imgNoDataFound
 import kotlinx.android.synthetic.main.payment_list.nodata_txtview
 import kotlinx.android.synthetic.main.refund_list.*
 
+/**
+ * [author] by `Tahir Raza`
+ * [created] on 25/01/2022
+ *
+ * Activity => RefundList
+ */
 class RefundList : AppCompatActivity() {
     lateinit var payNowViewModel: PaymentViewModel
     lateinit var refundAdapter: RefundListAdapter
@@ -22,6 +28,9 @@ class RefundList : AppCompatActivity() {
         init()
     }
 
+    /**
+     *  function that initializes the views,obtain view model and getAllRefunds.
+     */
     fun init() {
         refundAdapter = this?.let { RefundListAdapter() }!!
         payNowViewModel = obtainViewModel(PaymentViewModel::class.java)
@@ -30,6 +39,9 @@ class RefundList : AppCompatActivity() {
 
     }
 
+    /**
+     *  setup list for all the refunds.
+     */
     fun setupListAdapter(arrayList: List<Refunds>) {
         val mLayoutManager = LinearLayoutManager(this)
         mLayoutManager.orientation = LinearLayoutManager.VERTICAL
@@ -40,6 +52,9 @@ class RefundList : AppCompatActivity() {
         noDataFound()
     }
 
+    /**
+     *  subscribe to the refunds list.
+     */
     fun subscribe() {
 
         payNowViewModel.getAllRefunds().observe(
@@ -53,6 +68,9 @@ class RefundList : AppCompatActivity() {
 
     }
 
+    /**
+     *  hide and show textviews on ondatafound.
+     */
     private fun noDataFound() {
         if (refundAdapter.getList().isEmpty() || refundAdapter.getList() == null) {
             imgNoDataFound.visibility = View.VISIBLE

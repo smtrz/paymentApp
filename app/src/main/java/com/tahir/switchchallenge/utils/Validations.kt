@@ -2,9 +2,15 @@ package com.tahir.switchchallenge.utils
 
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
+/**
+ * [author] by `Tahir Raza`
+ * [created] on 25/01/2022
+ *
+ * Validations
+ */
 object Validations {
+    // validation visa and master card using regex.
     fun validateCardNumber(ccNumber: String): Boolean {
         var isTrue = false
         var ptVisa = "^4[0-9]{6,}$"
@@ -23,6 +29,9 @@ object Validations {
 
     }
 
+    /**
+     * validate card expiry
+     */
     fun validateCardExpiryDate(expiryDate: String): Boolean {
         var isTrue: Boolean;
         try {

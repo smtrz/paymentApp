@@ -7,6 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.tahir.switchchallenge.R
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * [author] by `Tahir Raza`
+ * [created] on 25/01/2022
+ *
+ * Activity => MainActivity
+ */
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,6 +20,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         init()
     }
 
+    /*
+    the entry point function for initializations.
+     */
     fun init() {
         payment.setOnClickListener(this)
         paymenthistory.setOnClickListener(this)
@@ -21,6 +30,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    /*
+    OnClick event that handles the activation navigations on card clicks.
+     */
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.payment -> {

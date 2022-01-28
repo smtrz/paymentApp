@@ -9,7 +9,9 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 object GeneralHelpers {
-
+    /**
+     * get current datetime
+     */
     fun getCurrentDateTime(): String {
         val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
         val currentDate = sdf.format(Date())

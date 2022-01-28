@@ -1,220 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    android:orientation="vertical"
-    tools:context=".activities.MainActivity">
+    android:background="@color/background">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/opensansbold"
-            android:text="@string/welcome"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:typeface="sans" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/opensansitalic"
-            android:text="@string/welcome_submsg"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:typeface="normal" />
-    </LinearLayout>
-
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="18dp"
-        android:orientation="vertical">
 
-        <!--        <TextView-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:fontFamily="@font/opensans"-->
+        android:orientation="vertical"
+        tools:context=".activities.MainActivity">
 
-        <!--            android:text="select from the options below to get started !"-->
-        <!--            android:textColor="@color/white"-->
-
-        <!--            android:textSize="14sp" />-->
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/payment"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            card_view:cardCornerRadius="4dp"
-            card_view:cardElevation="5dp"
-            card_view:cardMaxElevation="4dp"
-            card_view:cardUseCompatPadding="true">
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensansbold"
+                android:text="@string/welcome"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:typeface="sans" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensansitalic"
+                android:text="@string/welcome_submsg"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:typeface="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="18dp"
+            android:orientation="vertical">
+
+            <!--        <TextView-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:fontFamily="@font/opensans"-->
+
+            <!--            android:text="select from the options below to get started !"-->
+            <!--            android:textColor="@color/white"-->
+
+            <!--            android:textSize="14sp" />-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/payment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/btn_color">
-
-                <ImageView
-
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:padding="@dimen/_5sdp"
-                    android:src="@drawable/payonline" />
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="5dp"
+                card_view:cardMaxElevation="4dp"
+                card_view:cardUseCompatPadding="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
+                    android:background="@drawable/btn_color">
 
-                    android:orientation="vertical">
+                    <ImageView
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/payonline" />
 
-                        android:fontFamily="@font/opensansbold"
-                        android:text="Pay Online"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
 
-                        android:textColor="#ffffff"
-                        android:textSize="16sp" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:fontFamily="@font/opensans"
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
 
-                        android:text="Pay via credit card in seconds"
-                        android:textColor="#ffffff"
-                        android:textSize="12sp" />
+                            android:fontFamily="@font/opensansbold"
+                            android:text="Pay Online"
+
+                            android:textColor="#ffffff"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/opensans"
+
+                            android:text="Pay via credit card in seconds"
+                            android:textColor="#ffffff"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/paymenthistory"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            card_view:cardCornerRadius="4dp"
-            card_view:cardElevation="5dp"
-            card_view:cardMaxElevation="4dp"
-            card_view:cardUseCompatPadding="true">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/paymenthistory"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/btn_color_2">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:padding="@dimen/_5sdp"
-                    android:src="@drawable/paymenthistory" />
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="5dp"
+                card_view:cardMaxElevation="4dp"
+                card_view:cardUseCompatPadding="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
+                    android:background="@drawable/btn_color_2">
 
-                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/paymenthistory" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
 
-                        android:fontFamily="@font/opensansbold"
-                        android:text="Payment History"
+                        android:orientation="vertical">
 
-                        android:textColor="#ffffff"
-                        android:textSize="16sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:fontFamily="@font/opensans"
+                            android:fontFamily="@font/opensansbold"
+                            android:text="Payment History"
 
-                        android:text="All your payment history goes here"
-                        android:textColor="#ffffff"
-                        android:textSize="12sp" />
+                            android:textColor="#ffffff"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/opensans"
+
+                            android:text="All your payment history goes here"
+                            android:textColor="#ffffff"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/refund"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            card_view:cardCornerRadius="4dp"
-            card_view:cardElevation="5dp"
-            card_view:cardMaxElevation="4dp"
-            card_view:cardUseCompatPadding="true">
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/refund"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/btn_color">
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:padding="@dimen/_5sdp"
-                    android:src="@drawable/paymentrefund" />
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="5dp"
+                card_view:cardMaxElevation="4dp"
+                card_view:cardUseCompatPadding="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
+                    android:background="@drawable/btn_color">
 
-                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/paymentrefund" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
 
-                        android:fontFamily="@font/opensansbold"
-                        android:text="Make Refund Request"
+                        android:orientation="vertical">
 
-                        android:textColor="#ffffff"
-                        android:textSize="16sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:fontFamily="@font/opensans"
+                            android:fontFamily="@font/opensansbold"
+                            android:text="View Refund Request"
 
-                        android:text="Launch refund request now"
-                        android:textColor="#ffffff"
-                        android:textSize="12sp" />
-                    android:textSize="15sp" />
+                            android:textColor="#ffffff"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:fontFamily="@font/opensans"
+
+                            android:text="View full and partial refunds"
+                            android:textColor="#ffffff"
+                            android:textSize="12sp" />
+                        android:textSize="15sp" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

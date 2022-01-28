@@ -45,7 +45,7 @@ class RefundListAdapter() :
         fun setUpView(refund: Refunds?) {
             model = refund
 
-            txtamount.text = refund?.amount.toString()
+            txtamount.text = refund?.amount.toString() + " USD"
             paymentno.text = "Payment No: " + refund?.paymentId.toString()
             date_time.text = refund?.addOn
             payment_status.text = refund?.type

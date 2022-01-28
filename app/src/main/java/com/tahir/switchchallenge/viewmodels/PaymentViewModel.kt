@@ -13,23 +13,26 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
+/**
+ * [author] by `Tahir Raza`
+ * [created] on 25/01/2022
+ *
+ * Payment ViewModel
+ */
 class PaymentViewModel : ViewModel() {
-
+    // private variables and getters.
     private val _payments: MutableLiveData<DataState<Long>> =
         MutableLiveData()
     val paymentObx: MutableLiveData<DataState<Long>>
         get() = _payments
     private val _refpayments: MutableLiveData<DataState<Long>> =
         MutableLiveData()
-    val refpaymentObx: MutableLiveData<DataState<Long>>
-        get() = _refpayments
+
     val refundSum: MutableLiveData<DataState<Long>> = MutableLiveData()
 
-
-    init {
-
-    }
-
+    /*
+    getting the refund sum from db
+     */
     fun getRefundSum(refund: Refunds, payment: Payments) {
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -43,12 +46,18 @@ class PaymentViewModel : ViewModel() {
 
     }
 
+    /*
+    Getting all the payments posted.
+     */
     fun getAllPayments(): LiveData<List<Payments>> {
 
         return DbRepo.getPaymentsfromDb()
 
     }
 
+    /*
+    Submitting the payment into the database.
+     */
     fun submitPayment(payment: Payments) {
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -61,6 +70,9 @@ class PaymentViewModel : ViewModel() {
 
     }
 
+    /*
+    Submit refund
+     */
     fun submitRefunds(refunds: Refunds) {
         viewModelScope.launch(Dispatchers.IO) {
 
@@ -73,6 +85,9 @@ class PaymentViewModel : ViewModel() {
 
     }
 
+    /*
+    Get all refunds.
+     */
     fun getAllRefunds(): LiveData<List<Refunds>> {
 
         return DbRepo.getallRefunds()
