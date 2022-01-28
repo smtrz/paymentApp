@@ -23,9 +23,9 @@ This app is designed using android's Jetpack components such as :
 
 # Screenshots
 
-<img src="1.jpg" alt="drawing" width="350"/>  |  <img src="2.jpg" alt="drawing" width="350"/>
-
-
+- <a href="https://i.imgur.com/wHkr1Gd.jpg">Screenshot # 1</a><br/>
+- <a href="https://imgur.com/UbIvpZJ.jpg">Screenshot # 2</a><br/>
+- <a href="https://imgur.com/YgKPOb7.jpg">Screenshot # 3</a>
 
 # Features
 
