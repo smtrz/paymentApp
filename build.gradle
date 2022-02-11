@@ -4,7 +4,7 @@ buildscript {
     ext {
         compileSdkVersion = 32
         buildToolsVersion = "29.0.2"
-        applicationId = "com.tahir.switchchallenge"
+        applicationId = "com.tahir.paymentApp"
         minSdkVersion = 21
         targetSdkVersion = 32
         versionCode = 1

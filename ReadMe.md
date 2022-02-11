@@ -1,4 +1,4 @@
-# Switch Challenge - Payment App
+# Sample - Payment App
 
 This is an android application written in 'KOTLIN' that lets you:
 

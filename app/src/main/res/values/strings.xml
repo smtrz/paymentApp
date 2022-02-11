@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SwitchChallenge</string>
-    <string name="welcome">Welcome to Switch Challenge</string>
+    <string name="app_name">Payment App</string>
+    <string name="welcome">Welcome to our payment app.</string>
     <string name="welcome_submsg">We are deligted to see you here !</string>
 </resources>
